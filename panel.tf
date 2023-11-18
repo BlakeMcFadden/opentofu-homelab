@@ -1,6 +1,6 @@
-resource "proxmox_vm_qemu" "docker" {
+resource "proxmox_vm_qemu" "panel" {
   count = 1
-  name = "docker"
+  name = "panel"
   target_node = var.proxmox_host
 
   clone = var.template_name
@@ -31,7 +31,7 @@ resource "proxmox_vm_qemu" "docker" {
     ]
   }
   
-  ipconfig0 = var.ipconfig_docker
+  ipconfig0 = var.ipconfig_panel
   
   sshkeys = <<EOF
   ${var.ssh_key}
