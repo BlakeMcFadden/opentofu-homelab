@@ -17,6 +17,7 @@ resource "proxmox_vm_qemu" "docker" {
     size = "20G"
     type = "scsi"
     storage = "local-lvm"
+    # Required to be 0 for no error on deployment
     iothread = 0
   }
   
